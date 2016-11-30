@@ -1,19 +1,22 @@
 organization := "com.example"
 
+scalacOptions += "-deprecation"
+
+scalaVersion := "$scala_version$"
+
 name := "$name$"
 
 version := "0.1.0"
 
-seq(coffeeSettings:_*)
+coffeeSettings
 
-seq(lessSettings:_*)
+lessSettings
 
-(resourceManaged in (Compile, CoffeeKeys.coffee)) <<= (resourceManaged in Compile)(_ / "www" / "js")
+(resourceManaged in (Compile, CoffeeKeys.coffee)) := (resourceManaged in Compile)(_ / "www" / "js").value
 
-(resourceManaged in (Compile, LessKeys.less)) <<= (resourceManaged in Compile)(_ / "www" / "css")
+(resourceManaged in (Compile, LessKeys.less)) := (resourceManaged in Compile)(_ / "www" / "css").value
 
 libraryDependencies ++= Seq(
-   "net.databinder" %% "unfiltered-jetty" % "$unfiltered_version$",
-   "net.databinder" %% "unfiltered-filter" % "$unfiltered_version$",
-   "net.databinder" %% "unfiltered-json" % "$unfiltered_version$"
+  "net.databinder" %% "unfiltered-jetty" % "$unfiltered_version$",
+  "net.databinder" %% "unfiltered-filter" % "$unfiltered_version$"
 )
