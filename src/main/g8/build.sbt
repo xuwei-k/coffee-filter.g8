@@ -16,7 +16,9 @@ lessSettings
 
 (resourceManaged in (Compile, LessKeys.less)) := (resourceManaged in Compile)(_ / "www" / "css").value
 
+val unfilteredVersion = "$unfiltered_version$"
+
 libraryDependencies ++= Seq(
-  "ws.unfiltered" %% "unfiltered-jetty" % "$unfiltered_version$",
-  "ws.unfiltered" %% "unfiltered-filter" % "$unfiltered_version$"
+  "ws.unfiltered" %% "unfiltered-jetty" % unfilteredVersion,
+  "ws.unfiltered" %% "unfiltered-filter" % unfilteredVersion
 )
