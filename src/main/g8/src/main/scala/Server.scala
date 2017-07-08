@@ -2,7 +2,7 @@
 import unfiltered.request.Path
 
 object Server {
-  def main(args: Array[String]) {
+  def main(args: Array[String]): Unit = {
     unfiltered.jetty.Server.anylocal.context("/assets") {
       _.resources(Page.assets)
     }.plan(unfiltered.filter.Planify {
