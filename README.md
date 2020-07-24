@@ -1,1 +1,1 @@
-[![Build Status](https://travis-ci.org/unfiltered/coffee-filter.g8.svg)](https://travis-ci.org/unfiltered/coffee-filter.g8)
+[![Build Status](https://travis-ci.com/unfiltered/coffee-filter.g8.svg)](https://travis-ci.com/unfiltered/coffee-filter.g8)
